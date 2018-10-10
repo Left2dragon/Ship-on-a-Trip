@@ -21,10 +21,8 @@ public class Timer : MonoBehaviour {
         string seconds = (t % 60).ToString("f0");
         //Makes the time go second by second with no decimals
 
-        Debug.Log(string.Format("Timer: {0} Minutes {1} seconds" ,minutes , seconds));
-        //Shows the timer on console
         timer.text = minutes + ":" + seconds;
-        //Shows the time on screen
+        //Shows the timer on the screen
         
 	}
 

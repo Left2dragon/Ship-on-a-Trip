@@ -20,17 +20,19 @@ public class ShipFunction : MonoBehaviour {
 	void Start () {
         speed = Random.Range(1, 10);
         //Will randomize the speed of the sprite every time the player starts the game
+
         positionX = Random.Range(-8, 8);
         positionY = Random.Range(-5, 5);
         transform.Translate(positionX, positionY, 0);
-	}   //Makes the ship spawn in a random location every time the player starts the game
+	}   //Makes the sprite spawn in a random location every time the player starts the game
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(0, speed * Time.deltaTime, 0, Space.Self);
-        //Makes the ship go foward constantly
 
-        if (Input.GetKey(KeyCode.Space))
+        transform.Translate(0, speed * Time.deltaTime, 0, Space.Self);
+        //Makes the sprite go foward constantly
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Red = Random.Range(0, 1f);
             Blue = Random.Range(0, 1f);
@@ -40,15 +42,15 @@ public class ShipFunction : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, 0, (rotationSpeed - 50) * Time.deltaTime);
+            transform.Rotate(0, 0, (rotationSpeed - 60) * Time.deltaTime);
             colorRend.color = Color.green;
-        }//If key "A" gets pushed down it'll turn left and turn green and is slower than right
+        }//If key "A" gets pushed down the sprite will turn left, turn green and is slower than right turn
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
             colorRend.color = Color.blue;
-        }//If key "D" gets pushed down it'll turn right and turn blue
+        }//If key "D" gets pushed down the sprite will turn right and turn blue
 
         if (Input.GetKey(KeyCode.S))
         {

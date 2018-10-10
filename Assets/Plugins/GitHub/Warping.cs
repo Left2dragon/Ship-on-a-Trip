@@ -19,6 +19,8 @@ public class Warping : MonoBehaviour {
         {
             transform.position = new Vector3(-9, transform.position.y);
         }
+        //Makes the ship warp from left side of the screen to the right side of the screen and vice versa
+
         if (transform.position.y < -5)
         {
             transform.position = new Vector3(transform.position.x, 5);
@@ -27,5 +29,5 @@ public class Warping : MonoBehaviour {
         {
             transform.position = new Vector3(transform.position.x, -5);
         }
-	}//Makes the ship warp to the screens parallel side
+	}   //Makes the ship warp from top side to the screen to the bottom side of the screen and vice versa
 }
